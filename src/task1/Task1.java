@@ -10,7 +10,8 @@ public class Task1 {
 
     public void countRepetitions(List list) {
         for(Object i : list) {
-        map.put((Integer) i, map.containsKey(i)?map.get(i)+1:1);
+        //map.put((Integer) i, map.containsKey(i)?map.get(i)+1:1);
+        map.merge((Integer) i, 1,(a, b) -> a+b);
         }
     }
 
